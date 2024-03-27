@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/learn_react_shop_project/static/css/main.772f3a80.css",
+    "main.js": "/learn_react_shop_project/static/js/main.0e8f1fa4.js",
+    "index.html": "/learn_react_shop_project/index.html",
+    "main.772f3a80.css.map": "/learn_react_shop_project/static/css/main.772f3a80.css.map",
+    "main.0e8f1fa4.js.map": "/learn_react_shop_project/static/js/main.0e8f1fa4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.772f3a80.css",
+    "static/js/main.0e8f1fa4.js"
+  ]
+}
