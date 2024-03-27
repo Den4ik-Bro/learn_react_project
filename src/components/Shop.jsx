@@ -418,12 +418,12 @@ const Shop = () => {
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [orders, setOrders] = useState([]);
-  const [isBasketShow, setBasketShow] = useState(false)
-  const [alertName, setAlertName] = useState('');
+  const [isBasketShow, setBasketShow] = useState(false);
+  const [alertName, setAlertName] = useState("");
 
   const handleBasketShow = () => {
-    setBasketShow(!isBasketShow)
-  }
+    setBasketShow(!isBasketShow);
+  };
 
   const addToBasket = (item) => {
     const itemIndex = orders.findIndex((orderItem) => orderItem.id === item.id);
@@ -452,42 +452,42 @@ const Shop = () => {
   };
 
   const closeAlert = () => {
-    setAlertName('');
+    setAlertName("");
   };
 
   const removeFromBasket = (itemId) => {
-    const newOrder = orders.filter(el => el.id !== itemId)
-    setOrders(newOrder)
-  }
+    const newOrder = orders.filter((el) => el.id !== itemId);
+    setOrders(newOrder);
+  };
 
   const incQuantity = (itemId) => {
-    const newOrders = orders.map(el => {
-      if (el.id === itemId){
+    const newOrders = orders.map((el) => {
+      if (el.id === itemId) {
         const newQuantity = el.quantity + 1;
         return {
-          ...el, 
-          quantity: newQuantity
-        }
+          ...el,
+          quantity: newQuantity,
+        };
       } else {
-        return el
+        return el;
       }
-    })
-    setOrders(newOrders)
+    });
+    setOrders(newOrders);
   };
 
   const decQuantity = (itemId) => {
-    const newOrders = orders.map(el => {
-      if (el.id === itemId){
+    const newOrders = orders.map((el) => {
+      if (el.id === itemId) {
         const newQuantity = el.quantity - 1;
         return {
-          ...el, 
-          quantity: newQuantity >= 1 ? newQuantity : 1
-        }
+          ...el,
+          quantity: newQuantity >= 1 ? newQuantity : 1,
+        };
       } else {
-        return el
+        return el;
       }
-    })
-    setOrders(newOrders)
+    });
+    setOrders(newOrders);
   };
 
   useEffect(() => {
@@ -505,21 +505,21 @@ const Shop = () => {
 
   return (
     <main className="container content">
-      <Cart quantity={orders.length} handleBasketShow={handleBasketShow}/>
+      <Cart quantity={orders.length} handleBasketShow={handleBasketShow} />
       {loading ? (
         <Preloader />
       ) : (
-        <GoodsList goods={goods} addToBasket={addToBasket} orders={orders}/>
+        <GoodsList goods={goods} addToBasket={addToBasket} orders={orders} />
       )}
-      {
-        isBasketShow && <BasketList 
-        orders={orders} 
-        handleBasketShow={handleBasketShow} 
-        removeFromBasket={removeFromBasket}
-        incQuantity={incQuantity}
-        decQuantity={decQuantity}
+      {isBasketShow && (
+        <BasketList
+          orders={orders}
+          handleBasketShow={handleBasketShow}
+          removeFromBasket={removeFromBasket}
+          incQuantity={incQuantity}
+          decQuantity={decQuantity}
         />
-      }
+      )}
       {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
     </main>
   );

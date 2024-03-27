@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 function Alert(props) {
-  const { name = '', closeAlert = Function.prototype } = props;
+  const { name = "", closeAlert = Function.prototype } = props;
 
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);

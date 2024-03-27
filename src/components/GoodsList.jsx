@@ -13,7 +13,12 @@ const GoodsList = (props) => {
   return (
     <div className="goods">
       {filteringGoods.map((item) => (
-        <GoodsItem key={item.id} {...item} addToBasket={addToBasket} orders={orders}/>
+        <GoodsItem
+          key={item.id}
+          {...item}
+          addToBasket={addToBasket}
+          orders={orders}
+        />
       ))}
     </div>
   );

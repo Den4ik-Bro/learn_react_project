@@ -12,11 +12,17 @@ const BasketItem = (props) => {
   return (
     <li className="collection-item">
       {name}{" "}
-      <i class="tiny material-icons basket-quantity" onClick={() => incQuantity(id)}>
+      <i
+        class="tiny material-icons basket-quantity"
+        onClick={() => incQuantity(id)}
+      >
         add_circle
       </i>{" "}
       x{quantity}{" "}
-      <i class="tiny material-icons basket-quantity" onClick={() => decQuantity(id)}>
+      <i
+        class="tiny material-icons basket-quantity"
+        onClick={() => decQuantity(id)}
+      >
         remove_circle
       </i>{" "}
       = {price.finalPrice * quantity}

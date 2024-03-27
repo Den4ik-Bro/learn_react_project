@@ -1,15 +1,22 @@
 const GoodsItem = (props) => {
-  const { mainId, displayName, displayDescription, price, granted, addToBasket, orders } =
-    props;
+  const {
+    mainId,
+    displayName,
+    displayDescription,
+    price,
+    granted,
+    addToBasket,
+    orders,
+  } = props;
   const getButtontext = (orders) => {
-    if (orders){
+    if (orders) {
       const findOrder = orders.find((el) => el.id === mainId);
-      if (findOrder){
-        return `In your cart ${findOrder.quantity}`
+      if (findOrder) {
+        return `In your cart ${findOrder.quantity}`;
       }
     }
-    return "Buy"
-    }
+    return "Buy";
+  };
 
   return (
     <div className="card" id={mainId}>
