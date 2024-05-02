@@ -1,5 +1,9 @@
-const Cart = (props) => {
-  const { quantity = 0, handleBasketShow } = props;
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
+const Cart = () => {
+  const { handleBasketShow, orders} = useContext(ShopContext);
+  const quantity = orders.length
 
   return (
     <div className="cart blue darken-4 white-text" onClick={handleBasketShow}>

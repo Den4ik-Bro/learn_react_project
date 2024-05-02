@@ -1,13 +1,19 @@
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
 const GoodsItem = (props) => {
+
   const {
     mainId,
     displayName,
     displayDescription,
     price,
     granted,
-    addToBasket,
     orders,
   } = props;
+  
+  const {addToBasket} = useContext(ShopContext)
+
   const getButtontext = (orders) => {
     if (orders) {
       const findOrder = orders.find((el) => el.id === mainId);
